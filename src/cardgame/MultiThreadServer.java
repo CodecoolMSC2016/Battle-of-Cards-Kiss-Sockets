@@ -2,11 +2,10 @@ package cardgame;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MultiThreadServer implements Runnable {
+public class MultiThreadServer{
   
 	Socket csocket;
 	
@@ -44,13 +43,9 @@ public class MultiThreadServer implements Runnable {
       
    }
    public void run() {
+	 
       try {
-         PrintStream pstream = new PrintStream(csocket.getOutputStream());
-         for (int i = 100; i >= 0; i--) {
-            pstream.println(i + " dont know what will this be yet");
-         }
-         pstream.close();
-         csocket.close();
+        csocket.close();
       } catch (IOException e) {
          System.out.println(e);
       }
