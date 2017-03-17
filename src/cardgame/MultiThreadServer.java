@@ -1,7 +1,6 @@
 package cardgame;
 
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -41,13 +40,5 @@ public class MultiThreadServer{
  		 out2.writeUTF(p2.getHandOfPlayer().get(0).toString());
       }
       
-   }
-   public void run() {
-	 
-      try {
-        csocket.close();
-      } catch (IOException e) {
-         System.out.println(e);
-      }
    }
 }
